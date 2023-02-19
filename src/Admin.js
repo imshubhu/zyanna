@@ -24,7 +24,7 @@ export default function Admin() {
   const imageUpload = async (event) => {
     const form = new FormData();
     form.append("title", title);
-    if(event.target.files.length > 0){
+    if(event.target.files.length === 0){
       return 
     }
     for (let i = 0; i < event.target.files.length; i++) {
