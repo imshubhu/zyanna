@@ -39,7 +39,7 @@ export default function Main() {
 
   const getData = async () => {
     const res = await axios.get(
-      "https://kurta-backend-production.up.railway.app/getImages"
+      "https://cyan-charming-rabbit.cyclic.app/getImages"
     );
     console.log("res", res.data);
     if (res.data.success) {
@@ -68,8 +68,8 @@ export default function Main() {
               {
                 item.images.length > 0 && 
                 <img
-                  src={`https://kurta-backend-production.up.railway.app/${item.images[0].filename}`}
-                  srcSet={`https://kurta-backend-production.up.railway.app/${item.images[0].filename}`}
+                  src={`https://cyan-charming-rabbit.cyclic.app/${item.images[0].filename}`}
+                  srcSet={`https://cyan-charming-rabbit.cyclic.app/${item.images[0].filename}`}
                   alt={item.title}
                   loading="lazy"
                   onClick={() => handleOpen(item.images)}
@@ -92,7 +92,7 @@ export default function Main() {
                 <div key={i}>
                   <img
                     loading="lazy"
-                    src={`https://kurta-backend-production.up.railway.app/${e.filename}`}
+                    src={`https://cyan-charming-rabbit.cyclic.app/${e.filename}`}
                     alt={e.filename}
                   />
                 </div>
