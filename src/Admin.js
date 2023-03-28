@@ -36,6 +36,7 @@ export default function Admin() {
          console.log(reader.result);
          imageArray.push(reader.result)
          if(imageArray.length === event.target.files.length){
+           console.log("imageArray", imageArray)
             const res = await axios.post(
               "https://zaynna-backend.onrender.com/uploadProfilePicture",
               {title, imageArray}
