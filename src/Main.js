@@ -39,7 +39,7 @@ export default function Main() {
 
   const getData = async () => {
     const res = await axios.get(
-      "https://zaynna-backend.onrender.com/getImages"
+      "https://www.azui.io:5000/api/v1/auth/getImages1"
     );
     console.log("res", res.data);
     if (res.data.success) {
@@ -68,8 +68,8 @@ export default function Main() {
               {
                 item.images.length > 0 && 
                 <img
-                  src={`https://zaynna-backend.onrender.com/${item.images[0].filename}`}
-                  srcSet={`https://zaynna-backend.onrender.com/${item.images[0].filename}`}
+                  src={`https://www.azui.io:5000/uploads/${item.images[0].filename}`}
+                  srcSet={`https://www.azui.io:5000/uploads/${item.images[0].filename}`}
                   alt={item.title}
                   loading="lazy"
                   onClick={() => handleOpen(item.images)}
@@ -92,7 +92,7 @@ export default function Main() {
                 <div key={i}>
                   <img
                     loading="lazy"
-                    src={`https://zaynna-backend.onrender.com/${e.filename}`}
+                    src={`https://www.azui.io:5000/uploads/${e.filename}`}
                     alt={e.filename}
                   />
                 </div>
