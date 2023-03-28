@@ -22,17 +22,27 @@ export default function Admin() {
   };
 
   const imageUpload = async (event) => {
-    const form = new FormData();
-    form.append("title", title);
+//     const form = new FormData();
+//     form.append("title", title);
     if(event.target.files.length === 0){
       return 
     }
+    let imageArray = []
     for (let i = 0; i < event.target.files.length; i++) {
-      form.append("image", event.target.files[i]);
+//       form.append("image", event.target.files[i]);
+      var reader = new FileReader();
+       reader.readAsDataURL(event.target.files[i]);
+       reader.onload = function () {
+         console.log(reader.result);
+         imageArray.push(reader.result)
+       };
+       reader.onerror = function (error) {
+         console.log('Error: ', error);
+       };
     }
     const res = await axios.post(
       "https://zaynna-backend.onrender.com/uploadProfilePicture",
-      form
+      {title, imageArray}
     );
     if (res.data.success) {
       setFile([]);
@@ -148,7 +158,7 @@ export default function Admin() {
                           <Stack key={i} direction="row" spacing={2}>
                             {" "}
                             <img
-                              src={`https://zaynna-backend.onrender.com/${f.filename}`}
+                              src={f}
                               width={"100px"}
                               alt={f.filename}
                             />{" "}
