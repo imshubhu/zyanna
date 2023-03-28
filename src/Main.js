@@ -68,8 +68,8 @@ export default function Main() {
               {
                 item.images.length > 0 && 
                 <img
-                  src={`https://www.azui.io:5000/uploads/${item.images[0].filename}`}
-                  srcSet={`https://www.azui.io:5000/uploads/${item.images[0].filename}`}
+                  src={`https://www.azui.io:5000/uploads/${item.images[0]}`}
+                  srcSet={`https://www.azui.io:5000/uploads/${item.images[0]}`}
                   alt={item.title}
                   loading="lazy"
                   onClick={() => handleOpen(item.images)}
@@ -92,8 +92,8 @@ export default function Main() {
                 <div key={i}>
                   <img
                     loading="lazy"
-                    src={`https://www.azui.io:5000/uploads/${e.filename}`}
-                    alt={e.filename}
+                    src={`https://www.azui.io:5000/uploads/${e}`}
+                    alt={e}
                   />
                 </div>
               ))}
