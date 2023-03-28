@@ -29,36 +29,30 @@ export default function Admin() {
     }
     let imageArray = []
     for (let i = 0; i < event.target.files.length; i++) {
-//       form.append("image", event.target.files[i]);
-      var reader = new FileReader();
-       reader.readAsDataURL(event.target.files[i]);
-       reader.onload = async function () {
-         console.log(reader.result);
-         imageArray.push(reader.result)
-         if(imageArray.length === event.target.files.length){
-           console.log("imageArray", imageArray)
-            const res = await axios.post(
-              "https://zaynna-backend.onrender.com/uploadProfilePicture",
-              {title, imageArray}
-            );
-            if (res.data.success) {
-              setFile([]);
-              setFilePreview([]);
-              setTitle("");
-              getData();
-            }
-         }
-       };
-       reader.onerror = function (error) {
-         console.log('Error: ', error);
-       };
+   const form = new FormData();
+    form.append("title", title);
+    if(event.target.files.length === 0){
+      return 
+    }
+    for (let i = 0; i < event.target.files.length; i++) {
+      form.append("images", event.target.files[i]);
+    }
+    const res = await axios.post(
+      "https://www.azui.io:5000/api/v1/auth/uploadImages1",
+      form
+    );
+    if (res.data.success) {
+      setFile([]);
+      setFilePreview([]);
+      setTitle("");
+      getData();
     }
     
   };
 
   const getData = async () => {
     const res = await axios.get(
-      "https://zaynna-backend.onrender.com/getImages"
+      "https://www.azui.io:5000/api/v1/auth/getImages1"
     );
     if (res.data.success) {
       setData(res.data.data);
@@ -162,7 +156,7 @@ export default function Admin() {
                           <Stack key={i} direction="row" spacing={2}>
                             {" "}
                             <img
-                              src={f}
+                              src={`https://www.azui.io:5000/${f.filename}`}
                               width={"100px"}
                               alt={f.filename}
                             />{" "}
