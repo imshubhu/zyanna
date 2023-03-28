@@ -32,7 +32,7 @@ export default function Admin() {
 //       form.append("image", event.target.files[i]);
       var reader = new FileReader();
        reader.readAsDataURL(event.target.files[i]);
-       reader.onload = function () {
+       reader.onload = async function () {
          console.log(reader.result);
          imageArray.push(reader.result)
          if(imageArray.length === event.target.files.length){
