@@ -60,7 +60,7 @@ export default function Main() {
         <span></span>
       </div>
       <div>
-          <video style="width:100%;max-height:100%" autoplay muted loop controls><source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+          <video style="width:100%;max-height:100%" autoplay muted loop controls><source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">Your browser does not support the video tag.</source></video>
       </div>
       <Container >
       <Box sx={{ width: "auto", height: "auto" }}>
