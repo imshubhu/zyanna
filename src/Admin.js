@@ -31,7 +31,7 @@ export default function Admin() {
       form.append("image", event.target.files[i]);
     }
     const res = await axios.post(
-      "https://kurta-backend-production.up.railway.app/uploadProfilePicture",
+      "https://cyan-charming-rabbit.cyclic.app/uploadProfilePicture",
       form
     );
     if (res.data.success) {
@@ -44,7 +44,7 @@ export default function Admin() {
 
   const getData = async () => {
     const res = await axios.get(
-      "https://kurta-backend-production.up.railway.app/getImages"
+      "https://cyan-charming-rabbit.cyclic.app/getImages"
     );
     if (res.data.success) {
       setData(res.data.data);
@@ -57,7 +57,7 @@ export default function Admin() {
 
   const deleteData = async (id) => {
     const res = await axios.get(
-      `https://kurta-backend-production.up.railway.app/delete?id=${id}`
+      `https://cyan-charming-rabbit.cyclic.app/delete?id=${id}`
     );
     console.log("data", res.data);
     if (res.data.success) {
@@ -148,7 +148,7 @@ export default function Admin() {
                           <Stack key={i} direction="row" spacing={2}>
                             {" "}
                             <img
-                              src={`https://kurta-backend-production.up.railway.app/${f.filename}`}
+                              src={`https://cyan-charming-rabbit.cyclic.app/${f.filename}`}
                               width={"100px"}
                               alt={f.filename}
                             />{" "}
