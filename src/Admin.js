@@ -35,21 +35,24 @@ export default function Admin() {
        reader.onload = function () {
          console.log(reader.result);
          imageArray.push(reader.result)
+         if(imageArray.length === event.target.files.length){
+            const res = await axios.post(
+              "https://zaynna-backend.onrender.com/uploadProfilePicture",
+              {title, imageArray}
+            );
+            if (res.data.success) {
+              setFile([]);
+              setFilePreview([]);
+              setTitle("");
+              getData();
+            }
+         }
        };
        reader.onerror = function (error) {
          console.log('Error: ', error);
        };
     }
-    const res = await axios.post(
-      "https://zaynna-backend.onrender.com/uploadProfilePicture",
-      {title, imageArray}
-    );
-    if (res.data.success) {
-      setFile([]);
-      setFilePreview([]);
-      setTitle("");
-      getData();
-    }
+    
   };
 
   const getData = async () => {
