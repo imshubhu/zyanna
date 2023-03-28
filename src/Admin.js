@@ -149,9 +149,9 @@ export default function Admin() {
                           <Stack key={i} direction="row" spacing={2}>
                             {" "}
                             <img
-                              src={`https://www.azui.io:5000/uploads/${f.filename}`}
+                              src={`https://www.azui.io:5000/uploads/${f}`}
                               width={"100px"}
-                              alt={f.filename}
+                              alt={f}
                             />{" "}
                           </Stack>
                         ))}{" "}
