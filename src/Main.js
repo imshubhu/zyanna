@@ -59,10 +59,10 @@ export default function Main() {
         <h1>Zyanna</h1>
         <span></span>
       </div>
-      <Container sx={{ width: "auto", height: "auto" }}>
+      <Container sx={{ width: "auto", height: "auto", margin: "10px" }}>
           <Box>
             <div>
-              <video style={{width:"100%", maxHeight:"100%"}} autoplay muted loop playsinline><source src="https://www.azui.io/assets/video/1.mp4" type="video/mp4" /></video>
+              <video style={{width:"100%", maxHeight:"100%"}} autoplay muted loop playsinline controls><source src="https://www.azui.io/assets/video/1.mp4" type="video/mp4" /></video>
             </div>
           </Box>
       </Container>
@@ -70,7 +70,7 @@ export default function Main() {
       <Container sx={{ width: "auto", height: "auto" }}>
           <Box>
             <div>
-              <video style={{width:"100%", maxHeight:"100%"}} autoplay muted loop playsinline><source src="https://www.azui.io/assets/video/2.mp4" type="video/mp4" /></video>
+              <video style={{width:"100%", maxHeight:"100%"}} autoplay muted loop playsinline controls><source src="https://www.azui.io/assets/video/2.mp4" type="video/mp4" /></video>
             </div>
           </Box>
       </Container>
@@ -78,7 +78,7 @@ export default function Main() {
       <Container sx={{ width: "auto", height: "auto" }}>
           <Box>
             <div>
-              <video style={{width:"100%", maxHeight:"100%"}} autoplay muted loop playsinline><source src="https://www.azui.io/assets/video/3.mp4" type="video/mp4" /></video>
+              <video style={{width:"100%", maxHeight:"100%"}} autoplay muted loop playsinline controls><source src="https://www.azui.io/assets/video/3.mp4" type="video/mp4" /></video>
             </div>
           </Box>
       </Container>
